@@ -1,0 +1,73 @@
+// Differentiation of let, const, and var in JavaScript
+
+// Differentiation of let (Block Scoped [works inside loops, conditionals (if), or any block {}]) in JavaScript
+{
+    let firstName = 'Cess'; // 'firstName' is available only inside this block
+    // let firstName = 'Kiaa';  // Error: 'firstName' has already been declared inside this block
+    firstName = 'Princess'; // reassigns 'firstName' to 'Princess'
+    console.log(firstName);  // Logs: 'Princess' - it works because its inside the block
+}
+// Outside the block, 'firstName' does not exist anymore
+
+// Differentiation of var (Function Scoped [can be accessed anywhere inside the function, even inside blocks like loops or if statements]) in JavaScript
+{
+    var lastName = 'Padaloy';  // 'lastName' is accessible inside and outside the block (function scoped, not block scoped)
+    lastName = 'Garcia';  // // Redeclaring 'lastName' works with 'var' (unlike 'let') in the same scope
+    lastName = 'Tallayo';  // Reassigns 'lastName' to 'Tallayo'
+    console.log(lastName);  // Logs: 'Tallayo' - it works because 'lastName' is function-scoped (accessible outside the block)
+}
+console.log(lastName);  // Logs: 'Tallayo' - 'lastName' is still accessible because 'var' is function-scoped (works outisde and inside the block)
+
+// Differentiation of const (Block Scoped [cannot be reassigned, works only inside the block where it's declared]) in JavaScript
+{
+    const nickName = 'Kiaa'; // 'nickName' is available only inside this block
+    // const nickName = 'Cess';  // Error: 'nickName' has already been declared inside this block
+    // nickName = 'Senju';  // Error: Assignment to constant variable (cannot reassign)
+    console.log(nickName);  // Logs: 'Kiaa' - it works because it's inside the block
+}
+// Outside the block, 'nickName' does not exist anymore
+// const works similarly to let in terms of block scoping, but it does not allow reassignment or redeclaration in the same scope.
+
+// Best practices:
+// Use 'let' when the value changes, 'const' when the value doesn't change, and avoid 'var' unless you need function scope.
+
+
+// Differentiation of Falsy Values in JavaScript
+// Example 1: false
+if (false) {
+    console.log("This will not be executed because false is falsy.");
+} else {
+    console.log("false is falsy, so the else block runs.");  // This will run
+}
+
+// Example 2: null
+let myValue = null;
+if (myValue) {
+    console.log("This will not be executed because null is falsy.");
+} else {
+    console.log('null is falsy, so the else block runs.');  // This will run
+}
+
+// Example 3: undefined
+let myVar;
+if (myVar) {
+    console.log("This will not be executed because undefined is falsy.");
+} else {
+    console.log('undefined is falsy, so the else block runs.');  // This will run
+}
+
+// Explanation:
+// these values that ive given (false, null, and undefined) are considered falsy because in conditional statements,
+// JavaScript evaluates them as false, dis means the code inside the 'if' block won't run.
+// theyll trigger the else block or any other behavior designated for falsy conditions.
+
+// Best practices:
+// u can use these falsy values to test if something is empty, missing, or uninitialized in your code
+// its a way to check if a variable has a value or if it should be ignored because its "falsy"
+
+// REFERENCES:
+console.log("1. Differentiation of let, const, and var in JavaScript:");
+console.log("https://www.freecodecamp.org/news/differences-between-var-let-const-javascript/");
+
+console.log("2. Differentiation of Falsy Values in JavaScript:");
+console.log("https://stackoverflow.com/questions/19839952/all-falsey-values-in-javascript");
