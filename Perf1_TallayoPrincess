@@ -33,6 +33,14 @@ console.log(lastName);  // Logs: 'Tallayo' - 'lastName' is still accessible beca
 
 
 // Differentiation of Falsy Values in JavaScript
+
+// Concept of falsy values in JavaScript
+// Falsy values in JavaScript are values that are considered false when evaluated in a conditional statement.
+// These values include false, null, undefined, 0, NaN, and an empty string ("").
+// In JavaScript, falsy values are automatically converted to false in conditional expressions (if, while, etc.).
+// For example, if a variable is set to 'null', it will not enter the if block, as null is treated as falsy.
+// It's useful for checking whether a variable is empty, missing, or uninitialized.
+
 // Example 1: false
 if (false) {
     console.log("This will not be executed because false is falsy.");
@@ -56,11 +64,6 @@ if (myVar) {
     console.log('undefined is falsy, so the else block runs.');  // This will run
 }
 
-// Explanation:
-// these values that ive given (false, null, and undefined) are considered falsy because in conditional statements,
-// JavaScript evaluates them as false, dis means the code inside the 'if' block won't run.
-// theyll trigger the else block or any other behavior designated for falsy conditions.
-
 // Best practices:
 // u can use these falsy values to test if something is empty, missing, or uninitialized in your code
 // its a way to check if a variable has a value or if it should be ignored because its "falsy"
@@ -71,3 +74,4 @@ console.log("https://www.freecodecamp.org/news/differences-between-var-let-const
 
 console.log("2. Differentiation of Falsy Values in JavaScript:");
 console.log("https://stackoverflow.com/questions/19839952/all-falsey-values-in-javascript");
+console.log("https://www.geeksforgeeks.org/falsy-in-javascript/");
